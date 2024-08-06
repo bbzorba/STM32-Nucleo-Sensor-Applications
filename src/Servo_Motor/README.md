@@ -1,7 +1,7 @@
 # Servo Motor Application
 
 
-Hardware Connections:
+*Hardware Connections:*
 
 
 Servo Motor  |      STM32 
@@ -13,7 +13,7 @@ GND         <->     GND
 Servo Pin   <->     PA3
 
 
-PA3 is also the A0 pin of STM32H743ZI2 Nucleo board. PWM is applied using the Channel 4 of Timer 2.
+PA3 is also the A0 pin of STM32H743ZI2 Nucleo board. PWM is applied using the Channel 4 of Timer 2. While implementing this application on a board other than STM32H743ZI2, do not forget to modify the pin number (e.g. GPIO_PIN_3), port number (GPIOA), the clock and timer that is used by the pin you selected in main.cpp file. You also might need to assign different values to PWM signals since the frequency of the timer you use might be different. In that case, modify the SERVO_NORTH, SERVO_EAST and SERVO_SOUTH values under servo.h file.
 
 
 Understanding the PWM Values:

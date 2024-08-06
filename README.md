@@ -26,3 +26,5 @@ You can install these extensions from the VS Code Marketplace. After installing 
 
 
 Build the source codes of the application from an example inside src folder by copying the content of the file (e.g. LED_blink_CMSIS.cpp) to your main.cpp file inside your project's src folder and upload it to the board.
+
+P.S. Do not forget to include all the header files and source codes inside that application subfolder under the src folder in your project.
