@@ -30,54 +30,27 @@ PWM (Pulse Width Modulation) signal is used to control the position of the servo
 In most servo applications, the PWM period is around 20ms (50Hz frequency), and the pulse width varies between 1ms (0 degrees) to 2ms (180 degrees) to control the position of the servo shaft.
 
 
-## Calculating PWM Values
+## Calculating PWM Values for TIM2
 
-- Clock Frequency: Assume the TIM2 clock source is set to 100 MHz (HCLK/4 with HCLK at 400 MHz).
+For controlling a servo motor with a PWM signal, the standard PWM frequency is 50 Hz, which corresponds to a period of 20 milliseconds (ms).
+System and Timer Configuration
 
-- Prescaler: The prescaler divides the timer clock. In the code provided, the prescaler is set to 9 (htim2.Init.Prescaler = 10 - 1;), which divides the clock by 10.
+- System Clock (SYSCLK): 400 MHz (using PLL)
+- Prescaler: 1999
+- Timer Clock: 400 MHz / (1999 + 1) = 200 kHz
 
-- Counter Period: This value determines the period of the PWM signal.
+### PWM Period Calculation
 
+To generate a 20 ms period with a timer clock of 200 kHz:
 
-The period of the PWM can be calculated as:
+PWM Period (ARR) = Timer Clock / PWM Frequency = 200,000 Hz / 50 Hz = 4000
 
-    PWM Period=(Prescaler+1)×(Counter Period+1)/Timer Clock Frequency
+So, the Period value should be set to 4000 - 1 for a 20 ms period.
 
+### PWM Pulse Widths
 
-For the provided values:
+The pulse widths in milliseconds (ms) for the PWM signal need to be converted to timer counts.
 
-Prescaler: 10
-Counter Period: 10000
-
-    PWM Period=(10)×(10000)/100×106=1 ms
-
-However, to achieve a 20ms period, the Counter Period should be 20000 (for a 10kHz clock frequency post-prescaler). This makes the configuration:
-
-    PWM Period=20000×10−5 s=0.2 s=20 ms
-
-
-### Adjusting Values
-
-To correct the configuration to achieve 20ms PWM period:
-
-- Set the timer clock to 100 MHz.
-- Set the prescaler to 1000 - 1.
-- Set the counter period to 20000 - 1 to get 20ms period.
-
-
-### Recalculating Pulse Widths
-
-To achieve specific pulse widths (in ms) based on counter period (20000):
-
-- SERVO_NORTH: 1 ms pulse width
-
-- SERVO_EAST: 10 ms pulse width
-
-- SERVO_SOUTH: 20 ms pulse width
-
-
-These should map as follows:
-
-    SERVO_NORTH: (1ms / 20ms) * 20000 = 1000
-    SERVO_EAST: (10ms / 20ms) * 20000 = 10000
-    SERVO_SOUTH: (20ms / 20ms) * 20000 = 20000
+- SERVO_NORTH (1 ms pulse width): 1 ms20 ms×4000=20020ms1ms​×4000=200
+- SERVO_EAST (10 ms pulse width): 10 ms20 ms×4000=200020ms10ms​×4000=2000
+- SERVO_SOUTH (20 ms pulse width): 20 ms20 ms×4000=400020ms20ms​×4000=4000
