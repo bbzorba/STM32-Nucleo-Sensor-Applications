@@ -51,6 +51,6 @@ So, the Period value should be set to 4000 - 1 for a 20 ms period.
 
 The pulse widths in milliseconds (ms) for the PWM signal need to be converted to timer counts.
 
-- SERVO_NORTH (1 ms pulse width): (5 ms / 20 ms) × 4000 = 1,000
-- SERVO_EAST (10 ms pulse width): (50 ms / 20 ms) × 4000 = 10,000
-- SERVO_SOUTH (20 ms pulse width): (100 ms / 20 ms) × 4000 = 20,000
+- SERVO_NORTH (1 ms pulse width): (5 ms / 20 ms) × 4000 = 1000
+- SERVO_EAST (10 ms pulse width): (50 ms / 20 ms) × 4000 = 10000
+- SERVO_SOUTH (20 ms pulse width): (100 ms / 20 ms) × 4000 = 20000
