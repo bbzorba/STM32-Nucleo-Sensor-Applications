@@ -1,7 +1,7 @@
 # Servo Motor Application
 
 
-*Hardware Connections:*
+## Hardware Connections
 
 
 Servo Motor  |      STM32 
@@ -13,10 +13,12 @@ GND         <->     GND
 Servo Pin   <->     PA3
 
 
+## Software Modifications
+
 PA3 is also the A0 pin of STM32H743ZI2 Nucleo board. PWM is applied using the Channel 4 of Timer 2. While implementing this application on a board other than STM32H743ZI2, do not forget to modify the pin number (e.g. GPIO_PIN_3), port number (GPIOA), the clock and timer that is used by the pin you selected in main.cpp file. You also might need to assign different values to PWM signals since the frequency of the timer you use might be different. In that case, modify the SERVO_NORTH, SERVO_EAST and SERVO_SOUTH values under servo.h file.
 
 
-Understanding the PWM Values:
+## Understanding the PWM Values
 
 PWM (Pulse Width Modulation) signal is used to control the position of the servo motor. The pulse width (duration) determines the position of the servo.
 
@@ -28,7 +30,7 @@ PWM (Pulse Width Modulation) signal is used to control the position of the servo
 In most servo applications, the PWM period is around 20ms (50Hz frequency), and the pulse width varies between 1ms (0 degrees) to 2ms (180 degrees) to control the position of the servo shaft.
 
 
-Calculating PWM Values:
+## Calculating PWM Values
 
 - Clock Frequency: Assume the TIM2 clock source is set to 100 MHz (HCLK/4 with HCLK at 400 MHz).
 
@@ -54,7 +56,7 @@ However, to achieve a 20ms period, the Counter Period should be 20000 (for a 10k
     PWM Period=20000×10−5 s=0.2 s=20 ms
 
 
-Adjusting Values:
+### Adjusting Values
 
 To correct the configuration to achieve 20ms PWM period:
 
@@ -63,7 +65,7 @@ To correct the configuration to achieve 20ms PWM period:
 - Set the counter period to 20000 - 1 to get 20ms period.
 
 
-Recalculating Pulse Widths:
+### Recalculating Pulse Widths
 
 To achieve specific pulse widths (in ms) based on counter period (20000):
 
