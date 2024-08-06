@@ -20,9 +20,9 @@ Understanding the PWM Values:
 
 PWM (Pulse Width Modulation) signal is used to control the position of the servo motor. The pulse width (duration) determines the position of the servo.
 
--Pulse Width (ms): This is the duration for which the PWM signal stays high in one cycle.
+- Pulse Width (ms): This is the duration for which the PWM signal stays high in one cycle.
 
--Period (ms): This is the duration of one complete cycle of the PWM signal (high and low).
+- Period (ms): This is the duration of one complete cycle of the PWM signal (high and low).
 
 
 In most servo applications, the PWM period is around 20ms (50Hz frequency), and the pulse width varies between 1ms (0 degrees) to 2ms (180 degrees) to control the position of the servo shaft.
@@ -30,11 +30,11 @@ In most servo applications, the PWM period is around 20ms (50Hz frequency), and 
 
 Calculating PWM Values:
 
--Clock Frequency: Assume the TIM2 clock source is set to 100 MHz (HCLK/4 with HCLK at 400 MHz).
+- Clock Frequency: Assume the TIM2 clock source is set to 100 MHz (HCLK/4 with HCLK at 400 MHz).
 
--Prescaler: The prescaler divides the timer clock. In the code provided, the prescaler is set to 9 (htim2.Init.Prescaler = 10 - 1;), which divides the clock by 10.
+- Prescaler: The prescaler divides the timer clock. In the code provided, the prescaler is set to 9 (htim2.Init.Prescaler = 10 - 1;), which divides the clock by 10.
 
--Counter Period: This value determines the period of the PWM signal.
+- Counter Period: This value determines the period of the PWM signal.
 
 
 The period of the PWM can be calculated as:
@@ -58,20 +58,20 @@ Adjusting Values:
 
 To correct the configuration to achieve 20ms PWM period:
 
--Set the timer clock to 100 MHz.
--Set the prescaler to 1000 - 1.
--Set the counter period to 20000 - 1 to get 20ms period.
+- Set the timer clock to 100 MHz.
+- Set the prescaler to 1000 - 1.
+- Set the counter period to 20000 - 1 to get 20ms period.
 
 
 Recalculating Pulse Widths:
 
 To achieve specific pulse widths (in ms) based on counter period (20000):
 
--SERVO_NORTH: 1 ms pulse width
+- SERVO_NORTH: 1 ms pulse width
 
--SERVO_EAST: 10 ms pulse width
+- SERVO_EAST: 10 ms pulse width
 
--SERVO_SOUTH: 20 ms pulse width
+- SERVO_SOUTH: 20 ms pulse width
 
 
 These should map as follows:
