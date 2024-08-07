@@ -35,4 +35,6 @@ P.S. Do not forget to include all the header files and source codes inside that 
 
 The pinout of the STM32 NUCLEO-H743ZI2 board is shown below. It is necessary to use the pinout of your board every time it is intended to use a peripheral on the board or to connect a module to the board.
 
-![Screenshot of my project](STM32H743ZI2_Nucleo_board_pinout.png)
+![Screenshot of my project](images/STM32H743ZI2_Nucleo_board_pinout.png)
+
+![My Image Description](https://os.mbed.com/media/uploads/jeromecoutant/nucleo_h743zi2_zio_left_2019_10_9.png)
