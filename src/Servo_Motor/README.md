@@ -1,4 +1,4 @@
-# Servo Motor Application
+# Servo Motor Control Application
 
 
 ## Hardware Connections
@@ -10,7 +10,7 @@ VCC         <->     5V
 
 GND         <->     GND
 
-Servo Pin   <->     PA3
+Servo Pin   <->     A0 (PA3)
 
 
 ## Software Modifications
