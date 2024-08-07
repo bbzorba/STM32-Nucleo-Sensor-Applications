@@ -4,7 +4,7 @@
 ## Hardware Connections
 
 
-Servo Motor  |      STM32 
+Servo Motor  |      STM32H743ZI2 Nucleo board 
 
 VCC         <->     5V
 
