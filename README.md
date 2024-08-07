@@ -29,3 +29,10 @@ You can install these extensions from the VS Code Marketplace. After installing 
 Build the source codes of the application from an example inside src folder by copying the files under src folder and upload it to the board.
 
 P.S. Do not forget to include all the header files and source codes inside that application subfolder under the src folder in your project.
+
+
+## STM32 NUCLEO-H743ZI2 Pinout
+
+The pinout of the STM32 NUCLEO-H743ZI2 board is shown below. It is necessary to use the pinout of your board every time it is intended to use a peripheral on the board or to connect a module to the board.
+
+![Screenshot of my project](STM32H743ZI2_Nucleo_board_pinout.png)
