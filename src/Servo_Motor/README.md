@@ -1,16 +1,13 @@
 # Servo Motor Control Application
 
 
-## Hardware Connections
+### Servo Motor - STM32H743ZI2 Nucleo Board Connection
 
-
-Servo Motor  |      STM32H743ZI2 Nucleo board 
-
-VCC         <->     5V
-
-GND         <->     GND
-
-Servo Pin   <->     A0 (PA3)
+| Servo | STM32 |
+|----------|----------|
+| VCC	| 5V |
+| GND	| GND |
+| Servo Pin	| A0 (PA3) |
 
 
 ## Software Modifications

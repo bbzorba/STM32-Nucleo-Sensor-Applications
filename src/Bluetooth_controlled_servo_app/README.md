@@ -2,25 +2,22 @@
 
 ## Hardware Connections
 
-### HC05 - STM32 Connection
+### HC05 - STM32H743ZI2 Nucleo Board Connection
 
-HC05 Bluetooth Module  |      STM32H743ZI2 Nucleo board
+| HC05 | STM32 |
+|----------|----------|
+| VCC	| 3.3V |
+| GND	| GND |
+| TX Pin	| RX Pin (PC11) |
 
-VCC         <->     3.3V
 
-GND         <->     GND
+### Servo Motor - STM32H743ZI2 Nucleo Board Connection
 
-TX Pin   <->     RX Pin (PC11)
-
-### Servo - STM32 Connection
-
-Servo Motor  |      STM32H743ZI2 Nucleo board 
-
-VCC         <->     5V
-
-GND         <->     GND
-
-Servo Pin   <->     A0 (PA3) 
+| Servo | STM32 |
+|----------|----------|
+| VCC	| 5V |
+| GND	| GND |
+| Servo Pin	| A0 (PA3) |
 
 
 ## Software Modifications

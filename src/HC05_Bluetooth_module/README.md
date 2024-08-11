@@ -1,14 +1,12 @@
 # HC05 Bluetooth Communication Application
 
-## Hardware Connections
+### HC05 - STM32H743ZI2 Nucleo Board Connection
 
-HC05 Bluetooth Module  |      STM32H743ZI2 Nucleo board
-
-VCC         <->     3.3V
-
-GND         <->     GND
-
-TX Pin   <->     RX Pin (PC11)
+| HC05 | STM32 |
+|----------|----------|
+| VCC	| 3.3V |
+| GND	| GND |
+| TX Pin	| RX Pin (PC11) |
 
 
 ## Software Modifications
