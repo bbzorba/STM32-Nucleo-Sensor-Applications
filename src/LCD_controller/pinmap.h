@@ -1,7 +1,7 @@
 #ifndef PINMAP_H
 #define PINMAP_H
 
-#include "stm32f4xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
+#include "stm32h7xx_hal.h"              // Keil::Device:STM32Cube HAL:Common
 
 typedef struct
 {
