@@ -21,7 +21,9 @@ int main(void)
 		HAL_Delay(1000);
 		lcd.Clear();
 		HAL_Delay(1000);
-		lcd.Print("Priting Out!");
+		lcd.Print("Random Stuff:");
+		lcd.SetCursor(1,0);
+		lcd.Print("!'^+%&/()=?_;");
 		HAL_Delay(1000);
 		lcd.Clear();
 	}
